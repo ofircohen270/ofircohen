@@ -16,7 +16,15 @@ const jobs = [
             " third-party engineers to deliver on a wide variety of technology services developed in Java, Go, Node.js," +
             " React.js, Kotlin, Python, Swift and PHP.\n" +
             "• Involved in identifying and recruiting candidates, developing and enhancing the company’s engineering" +
-            " culture both internally and within the tech community, and in reviewing and promoting engineers."
+            " culture both internally and within the tech community, and in reviewing and promoting engineers.",
+        bulletPoints: [" Led the growth of the in-house engineering capacity from 7 engineers to the present-day size of" +
+        " 34 engineers. Currently in charge of 6 agile software development teams consisting of both in-house and" +
+        " third-party engineers to deliver on a wide variety of technology services developed in Java, Go, Node.js," +
+        " React.js, Kotlin, Python, Sw",
+            "Led the growth of the in-house engineering capacity from 7 engineers to the present-day size of" +
+            " 34 engineers. Currently in charge of 6 agile software development teams consisting of both in-house and" +
+            " third-party engineers to deliver on a wide variety of technology services developed in Java, Go, Node.js," +
+            " React.js, Kotlin, Python, Sw"]
     },
     {
         datesString: "Jan 2015 - Mar 2017",
@@ -27,7 +35,15 @@ const jobs = [
             " third-party engineers to deliver on a wide variety of technology services developed in Java, Go, Node.js," +
             " React.js, Kotlin, Python, Swift and PHP.\n" +
             "• Involved in identifying and recruiting candidates, developing and enhancing the company’s engineering" +
-            " culture both internally and within the tech community, and in reviewing and promoting engineers."
+            " culture both internally and within the tech community, and in reviewing and promoting engineers.",
+        bulletPoints: [" Led the growth of the in-house engineering capacity from 7 engineers to the present-day size of" +
+        " 34 engineers. Currently in charge of 6 agile software development teams consisting of both in-house and" +
+        " third-party engineers to deliver on a wide variety of technology services developed in Java, Go, Node.js," +
+        " React.js, Kotlin, Python, Sw",
+            "Led the growth of the in-house engineering capacity from 7 engineers to the present-day size of" +
+            " 34 engineers. Currently in charge of 6 agile software development teams consisting of both in-house and" +
+            " third-party engineers to deliver on a wide variety of technology services developed in Java, Go, Node.js," +
+            " React.js, Kotlin, Python, Sw"]
     }
 ];
 
@@ -48,9 +64,15 @@ class JobCard extends React.Component {
                     {this.bull}
                     {this.props.job.datesString}
                 </Typography>
-                <Typography variant="body2" style={{textAlign: "left", padding: "30px"}}>
-                    {this.props.job.description}
-                </Typography>
+                <p style={{textAlign: "left", padding: "10px"}}>
+                    <ul>
+                        {this.props.job.bulletPoints.map((bulletPoint, key) => (
+                            <li style={{margin: "15px 0px"}}>
+                                {bulletPoint}
+                            </li>
+                        ))}
+                    </ul>
+                </p>
             </CardContent>
         </Card>
     );
