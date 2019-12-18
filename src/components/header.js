@@ -16,17 +16,44 @@ class Header extends React.Component {
             background: "no-repeat top center",
             backgroundImage: `url(${background})`,
             webkitBackgroundSize: "cover !important",
-            backgroundSize: "cover !important"
+            backgroundSize: "cover !important",
+            backgroundAttachment: "fixed"
         }
     ;
 
+    constructor(props) {
+        super(props);
+        this.state = {window: {
+                height: 0,
+                width: 0}
+    }}
+
+    updateDimensions = () => {
+        this.setState({
+            window: {
+                height: window.innerHeight,
+                width: window.innerWidth
+            }
+        });
+    };
+
+    componentWillMount (){
+        this.updateDimensions();
+    };
+
+    componentDidMount (){
+        window.addEventListener('resize', this.updateDimensions);
+    }
+
+
     render() {
         return (
-            <Section style={this.STYLE}>
+            <div style={{...this.STYLE, height: this.state.window.height}}>
                 <Banner/>
-            </Section>
+            </div>
         )
     }
+
 }
 
 export default Header;

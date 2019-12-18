@@ -9,7 +9,8 @@ class Banner extends React.Component {
         {
             color: "#fdfdfd",
             padding: "0 100px",
-            width: "50%"
+            width: "50%",
+            paddingTop: "160px"
         }
     ;
 
@@ -34,4 +35,3 @@ class Banner extends React.Component {
 }
 
 export default Banner;
-
