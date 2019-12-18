@@ -13,6 +13,12 @@ class Header extends React.Component {
             textAlign: "left",
             width: "100%",
 
+            // For Vertical align of content
+            justifyContent: "center",
+            display: "flex",
+            webkitFlexDirection: "column",
+
+            // Background
             background: "no-repeat top center",
             backgroundImage: `url(${background})`,
             webkitBackgroundSize: "cover !important",
@@ -23,10 +29,13 @@ class Header extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {window: {
+        this.state = {
+            window: {
                 height: 0,
-                width: 0}
-    }}
+                width: 0
+            }
+        }
+    }
 
     updateDimensions = () => {
         this.setState({
@@ -37,11 +46,11 @@ class Header extends React.Component {
         });
     };
 
-    componentWillMount (){
+    componentWillMount() {
         this.updateDimensions();
     };
 
-    componentDidMount (){
+    componentDidMount() {
         window.addEventListener('resize', this.updateDimensions);
     }
 

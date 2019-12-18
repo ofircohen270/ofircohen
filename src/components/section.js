@@ -5,7 +5,7 @@ class Section extends React.Component {
 
     STYLE = {
         padding: "100px 0",
-        // maxWidth: "944px"
+        textAlign: "center"
     };
 
     render() {
