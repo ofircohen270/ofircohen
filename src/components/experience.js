@@ -57,14 +57,14 @@ class JobCard extends React.Component {
     render = () => (
         <Card style={{margin: "40px"}}>
             <CardContent>
-                <Typography variant="button" style={{fontSize: 15}} color="textSecondary" gutterBottom>
-                    {this.props.job.title}
-                    {this.bull}
-                    {this.props.job.location}
-                    {this.bull}
-                    {this.props.job.datesString}
-                </Typography>
                 <p style={{textAlign: "left", padding: "10px"}}>
+                    <Typography variant="button" style={{fontSize: 15}} color="textSecondary" gutterBottom>
+                        {this.props.job.title}
+                        {this.bull}
+                        {this.props.job.location}
+                        {this.bull}
+                        {this.props.job.datesString}
+                    </Typography>
                     <ul>
                         {this.props.job.bulletPoints.map((bulletPoint, key) => (
                             <li style={{margin: "15px 0px"}}>
