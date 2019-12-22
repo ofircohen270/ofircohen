@@ -5,17 +5,9 @@ import SocialMedia from './socialMedia'
 import '../App.css'
 class Banner extends React.Component {
 
-    STYLE =
-        {
-            color: "#fdfdfd",
-            padding: "0 100px",
-            width: "50%",
-        }
-    ;
-
     render() {
         return (
-            <div style={this.STYLE}>
+            <div className={"banner"}>
                 <Fade bottom>
                     <h1 className={"banner-title"}>Ofir Cohen</h1>
                 </Fade>
