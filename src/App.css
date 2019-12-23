@@ -1,0 +1,16 @@
+
+h1 {
+    font-size: 40px;
+    font-weight: 100;
+}
+
+h2 {
+    font-family: "Martel", serif;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+}
+
+p {
+    font-family: "Martel", serif;
+    font-size: 23px;
+}
