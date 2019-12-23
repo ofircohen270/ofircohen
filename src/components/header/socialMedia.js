@@ -6,7 +6,8 @@ class SocialMediaIcon extends React.Component {
         return (
             <span>
                     <a className={"social-media-icon"}
-                       href={this.props.network.link}>{this.props.network.icon({size: 30})}</a>
+                       href={this.props.network.link}
+                       target="_blank">{this.props.network.icon({size: 30})}</a>
             </span>
         )
     }
