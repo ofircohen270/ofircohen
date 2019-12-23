@@ -1,6 +1,17 @@
 import React from 'react';
 import {FaFacebook, FaInstagram, FaEnvelope} from 'react-icons/fa'
 
+class SocialMediaIcon extends React.Component {
+    render() {
+        return (
+            <span>
+                    <a className={"social-media-icon"}
+                       href={this.props.network.link}>{this.props.network.icon({size: 30})}</a>
+            </span>
+        )
+    }
+}
+
 class Network {
     constructor(icon, link) {
         this.icon = icon;
@@ -16,22 +27,10 @@ class SocialMedia extends React.Component {
         new Network(FaEnvelope, "mailto:ofircohen270@gmail.com")
     ];
 
-    ICON_STYLE =
-        {
-            color: "#fdfdfd",
-            size: "30px",
-            margin: "10px"
-        }
-    ;
-
     render() {
         return (
             <div>
-                {this.NETWORKS.map(network => (
-                    <span>
-                        <a style={this.ICON_STYLE} href={network.link}>{network.icon({size: 30})}</a>
-                    </span>
-                ))}
+                {this.NETWORKS.map(network => <SocialMediaIcon network={network}/>)}
             </div>
         )
     }

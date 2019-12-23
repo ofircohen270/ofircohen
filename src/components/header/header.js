@@ -1,8 +1,7 @@
 import React from 'react';
 
-import Section from "./section";
 import Banner from "./banner";
-import background from '../images/background3.jpg'
+import background from '../../images/background3.jpg'
 
 class Header extends React.Component {
 

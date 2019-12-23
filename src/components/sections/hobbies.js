@@ -1,12 +1,10 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade'
-import Slide from '@material-ui/core/Slide'
-import Typography from '@material-ui/core/Typography';
-import {FaJs, FaHtml5, FaPython, FaCss3, FaReact} from 'react-icons/fa'
-import yogaVideo from '../images/yoga.mp4'
-import travelingImg from '../images/travel.jpg'
-import animalsImg from '../images/farm.jpg'
-import guitarImg from '../images/guitar.jpg'
+
+import yogaVideo from '../../images/yoga.mp4'
+import animalsImg from '../../images/farm.jpg'
+import guitarImg from '../../images/guitar.jpg'
+import travelingImg from '../../images/travel.jpg'
 
 import Section from "./section";
 
@@ -48,23 +46,20 @@ class Hobbies extends React.Component {
         return (
             <Section style={{backgroundColor: "white", color: "#2c2c2c"}}>
                 <Fade delay={200}>
-                <h1 style={{color: "#767676"}}>The Things That Make Me Happy</h1>
-                {hobbies.map((hobby, key) => (
-                    <div style={{margin: "40px"}}>
-                        <div>
-                            <h2>{hobby.title}</h2>
-                            <p>{hobby.description}</p>
+                    <h1 style={{color: "#767676"}}>The Things That Make Me Happy</h1>
+                    {hobbies.map((hobby, key) => (
+                        <div style={{margin: "40px"}}>
+                            <div>
+                                <h2>{hobby.title}</h2>
+                                <p>{hobby.description}</p>
+                            </div>
+                            {hobby.mediaType === mediaTypes.IMAGE ?
+                                <img src={hobby.media} alt={hobby.title} style={{width: "100%"}}/>
+                                :
+                                <video autoPlay loop muted src={hobby.media} style={{width: "100%"}}/>
+                            }
                         </div>
-                        {hobby.mediaType === mediaTypes.IMAGE ?
-                        (
-                            <img src={hobby.media} alt={hobby.title} style={{width: "100%"}}/>
-                        )
-                         :
-                        (
-                            <video autoPlay loop muted src={hobby.media} style={{width: "100%"}}/>
-                        )}
-                    </div>
-                ))}
+                    ))}
                 </Fade>
             </Section>
         )

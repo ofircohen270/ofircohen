@@ -29,21 +29,28 @@ const skills = [
     }
 ];
 
+class Skill extends React.Component {
+    render() {
+        return (
+            <Grid xs>
+                <div>{this.props.icon({size: 70})}</div>
+                <Typography variant="overline">{this.props.name}</Typography>
+            </Grid>
+        )
+    }
+}
+
 class Skills extends React.Component {
 
     render() {
         return (
-            <Section style={{backgroundColor: "#282828", color: "#d0d0d0"}}>
+            <Section style={{backgroundColor: "#7f8e69", color: "#f4f4f4"}}>
                 <Fade bottom delay={200}>
                     <h1 style={{marginBottom: "50px"}}>My Skills</h1>
                     <Grid container>
-                        {skills.map((skill, key) => (
-                            <Grid xs>
-                                <div>{skill.icon({size: 70})}</div>
-                                <Typography variant="overline" >{skill.name}</Typography>
-                            </Grid>
-
-                        ))}
+                        {skills.map((skill, key) =>
+                            <Skill icon={skill.icon} name={skill.name}/>
+                        )}
                     </Grid>
                 </Fade>
             </Section>

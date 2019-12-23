@@ -2,7 +2,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade'
 import SocialMedia from './socialMedia'
 
-import '../App.css'
+import '../../App.css'
 class Banner extends React.Component {
 
     render() {
