@@ -1,5 +1,4 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade'
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent';
@@ -82,13 +81,11 @@ class Experience extends React.Component {
 
     render() {
         return (
-            <Section style={{backgroundColor: "#eee"}}>
-                <Fade left delay={200}>
-                    <h1>My Experience</h1>
-                    {jobs.map((job, key) => (
-                        <JobCard job={job}/>
-                    ))}
-                </Fade>
+            <Section backgroundColor={"#eee"}>
+                <h1>My Experience</h1>
+                {jobs.map((job, key) => (
+                    <JobCard job={job}/>
+                ))}
             </Section>
         )
     }

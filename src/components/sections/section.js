@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container} from '@material-ui/core'
+import Fade from "react-reveal/Fade";
 
 class Section extends React.Component {
 
@@ -10,9 +11,15 @@ class Section extends React.Component {
 
     render() {
         return (
-            <section style={{...this.STYLE, ...this.props.style}}>
+            <section style={{
+                ...this.STYLE,
+                color: this.props.color,
+                backgroundColor: this.props.backgroundColor
+            }}>
                 <Container>
-                    {this.props.children}
+                    <Fade delay={200}>
+                        {this.props.children}
+                    </Fade>
                 </Container>
             </section>
         )

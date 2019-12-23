@@ -1,5 +1,4 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade'
 
 import Section from "./section";
 
@@ -9,13 +8,11 @@ class AboutMe extends React.Component {
 
     render() {
         return (
-            <Section style={{backgroundColor: "#1d1d1d"}}>
-                <Fade delay={200}>
-                    <h1 style={{color: "#f5f5f5"}}>About Me</h1>
-                    <p style={{color: "#b7b7b7"}}>
-                        {aboutMeText}
-                    </p>
-                </Fade>
+            <Section backgroundColor={"#1d1d1d"}>
+                <h1 style={{color: "#f5f5f5"}}>About Me</h1>
+                <p style={{color: "#b7b7b7"}}>
+                    {aboutMeText}
+                </p>
             </Section>
         )
     }

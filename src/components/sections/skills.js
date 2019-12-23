@@ -1,5 +1,4 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography';
 import {FaJs, FaHtml5, FaPython, FaCss3, FaReact} from 'react-icons/fa'
@@ -44,15 +43,13 @@ class Skills extends React.Component {
 
     render() {
         return (
-            <Section style={{backgroundColor: "#7b8a66", color: "#fcfcfc"}}>
-                <Fade bottom delay={200}>
-                    <h1 style={{marginBottom: "50px"}}>My Skills</h1>
-                    <Grid container>
-                        {skills.map((skill, key) =>
-                            <Skill icon={skill.icon} name={skill.name}/>
-                        )}
-                    </Grid>
-                </Fade>
+            <Section backgroundColor={"#7b8a66"} color={"#fcfcfc"}>
+                <h1 style={{marginBottom: "50px"}}>My Skills</h1>
+                <Grid container>
+                    {skills.map((skill, key) =>
+                        <Skill icon={skill.icon} name={skill.name}/>
+                    )}
+                </Grid>
             </Section>
         )
     }

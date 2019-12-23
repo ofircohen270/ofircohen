@@ -1,5 +1,4 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade'
 
 import yogaVideo from '../../images/yoga.mp4'
 import animalsImg from '../../images/farm.jpg'
@@ -44,23 +43,21 @@ class Hobbies extends React.Component {
 
     render() {
         return (
-            <Section style={{backgroundColor: "white", color: "#2c2c2c"}}>
-                <Fade delay={200}>
-                    <h1 style={{color: "#767676"}}>The Things That Make Me Happy</h1>
-                    {hobbies.map((hobby, key) => (
-                        <div style={{margin: "40px"}}>
-                            <div>
-                                <h2>{hobby.title}</h2>
-                                <p>{hobby.description}</p>
-                            </div>
-                            {hobby.mediaType === mediaTypes.IMAGE ?
-                                <img src={hobby.media} alt={hobby.title} style={{width: "100%"}}/>
-                                :
-                                <video autoPlay loop muted src={hobby.media} style={{width: "100%"}}/>
-                            }
+            <Section backgroundColor={"white"} color={"#2c2c2c"}>
+                <h1 style={{color: "#767676"}}>The Things That Make Me Happy</h1>
+                {hobbies.map((hobby, key) => (
+                    <div style={{margin: "40px"}}>
+                        <div>
+                            <h2>{hobby.title}</h2>
+                            <p>{hobby.description}</p>
                         </div>
-                    ))}
-                </Fade>
+                        {hobby.mediaType === mediaTypes.IMAGE ?
+                            <img src={hobby.media} alt={hobby.title} style={{width: "100%"}}/>
+                            :
+                            <video autoPlay loop muted src={hobby.media} style={{width: "100%"}}/>
+                        }
+                    </div>
+                ))}
             </Section>
         )
     }
