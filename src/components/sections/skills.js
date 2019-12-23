@@ -44,7 +44,7 @@ class Skills extends React.Component {
 
     render() {
         return (
-            <Section style={{backgroundColor: "#7f8e69", color: "#f4f4f4"}}>
+            <Section style={{backgroundColor: "#7b8a66", color: "#fcfcfc"}}>
                 <Fade bottom delay={200}>
                     <h1 style={{marginBottom: "50px"}}>My Skills</h1>
                     <Grid container>

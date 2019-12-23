@@ -3,6 +3,8 @@ import React from 'react';
 import Banner from "./banner";
 import background from '../../images/background3.jpg'
 
+import './header.css'
+
 class Header extends React.Component {
 
     STYLE =

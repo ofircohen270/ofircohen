@@ -32,7 +32,7 @@ const hobbies = [
         description: "I am a world traveler, meeting new people and cultures is my passion."
     },
     {
-        title: "Animal",
+        title: "Animals",
         media: animalsImg,
         mediaType: mediaTypes.IMAGE,
         description: "I have been volunteering in a sanctuary farm in Israel in the last few years. I love all my " +
