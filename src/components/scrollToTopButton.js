@@ -39,7 +39,7 @@ class ScrollToTopButton extends React.Component {
                 zIndex: 1,
                 visibility: this.state.hidden ? "hidden" : "",
                 opacity: this.state.hidden ? "0" : "1",
-                webkitTransition: "all .3s ease-in-out",
+                WebkitTransition: "all .3s ease-in-out",
                 transition: "all .3s ease-in-out"
             }}
                  onClick={this.scrollToTop}>

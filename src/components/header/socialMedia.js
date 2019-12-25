@@ -5,9 +5,10 @@ class SocialMediaIcon extends React.Component {
     render() {
         return (
             <span>
-                    <a className={"social-media-icon"}
-                       href={this.props.network.link}
-                       target="_blank">{this.props.network.icon({size: 30})}</a>
+                <a className={"social-media-icon"}
+                   href={this.props.network.link}
+                   target="_blank"
+                   rel="noopener noreferrer">{this.props.network.icon({size: 30})}</a>
             </span>
         )
     }
@@ -31,7 +32,8 @@ class SocialMedia extends React.Component {
     render() {
         return (
             <div>
-                {this.NETWORKS.map(network => <SocialMediaIcon network={network}/>)}
+                {this.NETWORKS.map((network, key) =>
+                    <SocialMediaIcon network={network} key={key}/>)}
             </div>
         )
     }

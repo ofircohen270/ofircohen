@@ -39,6 +39,26 @@ const hobbies = [
     }
 ];
 
+
+class Hobby extends React.Component {
+
+    render() {
+        return (
+            <div style={{margin: "40px"}}>
+                <div>
+                    <h2>{this.props.title}</h2>
+                    <p>{this.props.description}</p>
+                </div>
+                {this.props.mediaType === mediaTypes.IMAGE ?
+                    <img src={this.props.media} alt={this.props.title} style={{width: "100%"}}/>
+                    :
+                    <video autoPlay loop muted src={this.props.media} style={{width: "100%"}}/>
+                }
+            </div>
+        )
+    }
+}
+
 class Hobbies extends React.Component {
 
     render() {
@@ -46,17 +66,7 @@ class Hobbies extends React.Component {
             <Section backgroundColor={"white"} color={"#2c2c2c"}>
                 <h1 style={{color: "#767676"}}>The Things That Make Me Happy</h1>
                 {hobbies.map((hobby, key) => (
-                    <div style={{margin: "40px"}}>
-                        <div>
-                            <h2>{hobby.title}</h2>
-                            <p>{hobby.description}</p>
-                        </div>
-                        {hobby.mediaType === mediaTypes.IMAGE ?
-                            <img src={hobby.media} alt={hobby.title} style={{width: "100%"}}/>
-                            :
-                            <video autoPlay loop muted src={hobby.media} style={{width: "100%"}}/>
-                        }
-                    </div>
+                    <Hobby key={key} {...hobby}/>
                 ))}
             </Section>
         )

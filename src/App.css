@@ -10,7 +10,16 @@ h2 {
     letter-spacing: .3rem;
 }
 
-p {
+p, li {
     font-family: "Martel", serif;
     font-size: 23px;
+}
+
+/* screenwidth less than 900px
+--------------------------------------------------------------------- */
+@media only screen and (max-width: 900px) {
+    ul {
+        padding-inline-start: 20px;
+        font-size: 20px;
+    }
 }

@@ -8,7 +8,7 @@ import Section from "./section";
 const jobs = [
     {
         datesString: "Jan 2015 - Mar 2017",
-        title: "TOP SECRET",
+        title: "software & web developer",
         location: "8200, IDF",
         description: "• Led the growth of the in-house engineering capacity from 7 engineers to the present-day size of" +
             " 34 engineers. Currently in charge of 6 agile software development teams consisting of both in-house and" +
@@ -56,22 +56,21 @@ class JobCard extends React.Component {
     render = () => (
         <Card style={{margin: "40px 20px"}}>
             <CardContent>
-                <p style={{textAlign: "left", padding: "10px"}}>
+                <div style={{textAlign: "left", padding: "10px"}}>
+                    <h2>{this.props.job.title}</h2>
                     <Typography variant="button" style={{fontSize: 15}} color="textSecondary" gutterBottom>
-                        {this.props.job.title}
-                        {this.bull}
                         {this.props.job.location}
                         {this.bull}
                         {this.props.job.datesString}
                     </Typography>
                     <ul>
                         {this.props.job.bulletPoints.map((bulletPoint, key) => (
-                            <li style={{margin: "15px 0px"}}>
+                            <li key={key} style={{margin: "15px 0px"}}>
                                 {bulletPoint}
                             </li>
                         ))}
                     </ul>
-                </p>
+                </div>
             </CardContent>
         </Card>
     );
@@ -84,7 +83,7 @@ class Experience extends React.Component {
             <Section backgroundColor={"#eee"}>
                 <h1>My Experience</h1>
                 {jobs.map((job, key) => (
-                    <JobCard job={job}/>
+                    <JobCard key={key} job={job}/>
                 ))}
             </Section>
         )

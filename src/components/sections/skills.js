@@ -1,38 +1,49 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography';
-import {FaJs, FaHtml5, FaPython, FaCss3, FaReact} from 'react-icons/fa'
+
+import CSS3Logo from '../../images/logos/css3.svg'
+import HTMLLogo from '../../images/logos/HTML5.svg'
+import ReactLogo from '../../images/logos/react.svg'
+import PythonLogo from '../../images/logos/python.svg'
+import DjangoLogo from '../../images/logos/django.svg'
+import JavaScriptLogo from '../../images/logos/javascript.svg'
+
 
 import Section from "./section";
 
 const skills = [
     {
         name: "Python",
-        icon: FaPython
+        icon: PythonLogo
     },
     {
         name: "JavaScript",
-        icon: FaJs
+        icon: JavaScriptLogo
     },
     {
         name: "HTML",
-        icon: FaHtml5
+        icon: HTMLLogo
     },
     {
         name: "Css",
-        icon: FaCss3
+        icon: CSS3Logo
     },
     {
         name: "react",
-        icon: FaReact
+        icon: ReactLogo
+    },
+    {
+        name: "Django",
+        icon: DjangoLogo
     }
 ];
 
 class Skill extends React.Component {
     render() {
         return (
-            <Grid xs>
-                <div>{this.props.icon({size: 70})}</div>
+            <Grid item xs>
+                <div><img alt={this.props.name} height={"100px"} src={this.props.icon}/></div>
                 <Typography variant="overline">{this.props.name}</Typography>
             </Grid>
         )
@@ -45,9 +56,9 @@ class Skills extends React.Component {
         return (
             <Section backgroundColor={"#7b8a66"} color={"#fcfcfc"}>
                 <h1 style={{marginBottom: "50px"}}>My Skills</h1>
-                <Grid container>
+                <Grid container spacing={3}>
                     {skills.map((skill, key) =>
-                        <Skill icon={skill.icon} name={skill.name}/>
+                        <Skill key={key} icon={skill.icon} name={skill.name}/>
                     )}
                 </Grid>
             </Section>

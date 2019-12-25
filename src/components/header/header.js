@@ -17,12 +17,12 @@ class Header extends React.Component {
             // For Vertical align of content
             justifyContent: "center",
             display: "flex",
-            webkitFlexDirection: "column",
+            WebkitFlexDirection: "column",
 
             // Background
             background: "no-repeat top center",
             backgroundImage: `url(${background})`,
-            webkitBackgroundSize: "cover !important",
+            WebkitBackgroundSize: "cover !important",
             backgroundSize: "cover !important",
             backgroundAttachment: "fixed"
         }
