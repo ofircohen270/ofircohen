@@ -54,9 +54,9 @@ class JobCard extends React.Component {
     }}>•</span>;
 
     render = () => (
-        <Card style={{margin: "40px 20px"}}>
+        <Card className={"experience-card"}>
             <CardContent>
-                <div style={{textAlign: "left", padding: "10px"}}>
+                <div style={{textAlign: "left"}}>
                     <h2>{this.props.job.title}</h2>
                     <Typography variant="button" style={{fontSize: 15}} color="textSecondary" gutterBottom>
                         {this.props.job.location}
