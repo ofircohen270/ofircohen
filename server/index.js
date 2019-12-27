@@ -15,6 +15,6 @@ app.get('/api/resume', (req, res) => {
     res.send(JSON.stringify(resumeData))
 });
 
-app.listen(3001, () =>
-    console.log('Express server is running on localhost:3001')
+app.listen(80, () =>
+    console.log('Express server is running on localhost:80')
 );
