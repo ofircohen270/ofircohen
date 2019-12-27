@@ -8,21 +8,44 @@ import AboutMe from "./components/sections/aboutMe";
 import Experience from "./components/sections/experience";
 import ScrollToTopButton from "./components/scrollToTopButton";
 
-
 import './App.css';
 
-function App() {
-    return (
-        <div className="App">
-            <ScrollToTopButton/>
-            <Header/>
-            <AboutMe/>
-            <Experience/>
-            <Skills/>
-            <Hobbies/>
-            <Footer/>
-        </div>
-    );
+class App extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            greeting: '',
+            aboutMe: "",
+            jobs: []
+        };
+        this.getData = this.getData.bind(this);
+    }
+
+    componentDidMount() {
+        this.getData()
+    }
+
+    getData() {
+        fetch("/api/resume")
+            .then(response => response.json())
+            .then(state => this.setState(state));
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <ScrollToTopButton/>
+                <Header/>
+                <AboutMe aboutMe={this.state.aboutMe}/>
+                <Experience jobs={this.state.jobs}/>
+                <Skills/>
+                <Hobbies/>
+                <Footer/>
+            </div>
+        );
+    }
 }
 
 export default App;
