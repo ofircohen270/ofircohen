@@ -28,6 +28,10 @@ class App extends React.Component {
     }
 
     getData() {
+        if (window.location.hostname === "localhost") {
+            let example = require('./exampleResume.json');
+            this.setState(example)
+        }
         fetch("/api/resume")
             .then(response => response.json())
             .then(state => this.setState(state));
